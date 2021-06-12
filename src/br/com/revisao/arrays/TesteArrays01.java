@@ -12,6 +12,7 @@ public class TesteArrays01 {
 		final int ARRAY_LENGTH = 10;
 		Integer[] arrayInteger = new Integer[ARRAY_LENGTH];
 		for (int index = 0; index < arrayInteger.length; index++) {
+			// populando o array com o valor de index ao quadrado
 			arrayInteger[index] = (int) Math.pow(index, 2);
 		}
 		return arrayInteger;
