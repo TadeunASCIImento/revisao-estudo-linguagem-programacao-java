@@ -12,23 +12,37 @@ public class TesteArrays04 {
 
 	public static void main(String[] args) {
 
-		Integer[] array;
+		Integer total = 0;
+		Integer[] arrayInteger;
+		// gera dez arrays de números inteiros aleatórios.
 		for (int index = 0; index < ARRAY_LENGTH; index++) {
-			array = generateArrayInteger(ARRAY_LENGTH);
-			showArrayNumbers(array);
+			arrayInteger = generateArrayInteger(ARRAY_LENGTH);
+			showArraysNumbers(arrayInteger);
+			total += sumArrayIntegersElements(arrayInteger);
 			showMessage("\n");
 		}
+		System.out.printf("Resultado da soma de todos os arrays: %d", total);
 
 	}
 
-	private static void showArrayNumbers(Integer[] arrayInteger) {
+	// Exibe os números nos dez arrays gerados aleatóriamente.
+	private static void showArraysNumbers(Integer[] arrayInteger) {
 		for (Integer integer : arrayInteger) {
 			System.out.printf("%d%s ", integer, " ");
 		}
 
 	}
 
-	// gera dez arrays de números inteiros aleatóriamente.
+	// Soma todos elementos dos arrays de números inteiros.
+	private static Integer sumArrayIntegersElements(Integer[] arrayInteger) {
+		Integer total = 0;
+		for (Integer integer : arrayInteger) {
+			total += integer;
+		}
+		return total;
+	}
+
+	// gera um array de números inteiros aleatóriamente.
 	private static Integer[] generateArrayInteger(Integer arrayLenght) {
 		SecureRandom secureRandom = new SecureRandom();
 		Integer[] arrayInteger = new Integer[arrayLenght];
@@ -39,6 +53,7 @@ public class TesteArrays04 {
 		return arrayInteger;
 	}
 
+	// Exibe as mensagens no console.
 	private static void showMessage(String message) {
 		System.out.print(message);
 	}
