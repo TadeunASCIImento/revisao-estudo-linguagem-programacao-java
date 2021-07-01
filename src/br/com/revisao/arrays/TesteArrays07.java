@@ -47,9 +47,10 @@ public class TesteArrays07 {
 		Integer elemento = 90;
 		Integer posicao = Arrays.binarySearch(_array, elemento);
 		System.out.println("\n\nO número ".concat(elemento.toString())
-				.concat((posicao >= 0 ? " está na posicao ".concat(posicao.toString()) : " não foi localizado.")));
+				.concat((posicao >= 0 ? " está na posição ".concat(posicao.toString()) : " não foi localizado.")));
 	}
 
+	// Exibe os elementos do array.
 	private static void showArray(Number[] array) {
 		for (int indice = 0; indice < array.length; indice++) {
 			if (indice % 30 != 0) {
